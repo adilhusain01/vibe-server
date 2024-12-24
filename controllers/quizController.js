@@ -733,8 +733,11 @@ exports.submitQuiz = async (req, res) => {
       }
     });
 
-    // 4. Update participant score
-    participant.score = score;
+    // 4. Calculate total reward
+    const totalReward = score * quiz.rewardPerScore;
+
+    // 5. Update participant score and reward
+    participant.score = totalReward;
     await participant.save();
 
     res.status(200).json(participant);
