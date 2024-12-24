@@ -594,12 +594,12 @@ exports.updateQuiz = async (req, res) => {
     await quiz.save();
 
     const participants = await Participant.find({ quizId });
-    const participantNames = participants.map((p) => p.participantName);
+    const participantWalletAddress = participants.map((p) => p.walletAddress);
     const participantScores = participants.map((p) => p.score);
 
     res.status(200).json({
       gameId: quiz.gameId,
-      participants: participantNames,
+      participants: participantWalletAddress,
       scores: participantScores,
     });
   } catch (err) {
