@@ -584,7 +584,11 @@ exports.updateQuiz = async (req, res) => {
     if (!quiz) return res.status(404).json({ message: "Quiz not found" });
 
     Object.keys(data).forEach((key) => {
-      quiz[key] = data[key];
+      if (key === "gameId" && typeof data[key] === "object" && data[key].hex) {
+        quiz[key] = parseInt(data[key].hex, 16);
+      } else {
+        quiz[key] = data[key];
+      }
     });
 
     await quiz.save();
