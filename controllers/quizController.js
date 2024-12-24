@@ -574,9 +574,6 @@ exports.createQuizByVideo = async (req, res) => {
   }
 };
 
-const Quiz = require("./models/quiz"); // Adjust the path as necessary
-const Participant = require("./models/participant"); // Adjust the path as necessary
-
 exports.updateQuiz = async (req, res) => {
   const data = req.body;
   const { quizId } = req.params;
