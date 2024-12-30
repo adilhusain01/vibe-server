@@ -597,7 +597,7 @@ exports.updateQuiz = async (req, res) => {
     const participantWalletAddress = participants.map((p) => p.walletAddress);
     const participantRewards = participants.map((p) => p.reward);
 
-    res.status(200).json({
+    res.json({
       gameId: quiz.gameId,
       participants: participantWalletAddress,
       rewards: participantRewards,
