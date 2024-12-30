@@ -5,6 +5,7 @@ const participantSchema = new mongoose.Schema({
   participantName: { type: String, required: true },
   walletAddress: { type: String, required: true },
   score: { type: Number, default: null },
+  reward: { type: Number, default: null },
   nftTokenId: { type: Number }, // Add this field
 });
 

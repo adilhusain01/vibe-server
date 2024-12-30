@@ -737,7 +737,8 @@ exports.submitQuiz = async (req, res) => {
     const totalReward = score * quiz.rewardPerScore;
 
     // 5. Update participant score and reward
-    participant.score = totalReward;
+    participant.score = score;
+    participant.reward = totalReward;
     await participant.save();
 
     res.status(200).json(participant);
