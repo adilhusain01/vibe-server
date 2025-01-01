@@ -19,7 +19,7 @@ app.use(logger);
 app.use("/api/quiz", quizRoutes);
 app.use("/api/typing", typingRoutes);
 app.use("/api/memory-challenge", memoryChallengeRoutes);
-app.use("/api/fact-check", require("./routes/factCheckingGameRoutes"));
+app.use("/api/fact-check", require("./routes/factCheckingRoutes"));
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
