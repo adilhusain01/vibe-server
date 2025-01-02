@@ -172,10 +172,6 @@ exports.updateFactCheck = async (req, res) => {
     const participantWalletAddress = participants.map((p) => p.walletAddress);
     const participantRewards = participants.map((p) => p.reward);
 
-    console.log({
-      fact,
-    });
-
     res.json({
       gameId: factCheck.gameId,
       participants: participantWalletAddress,
